@@ -5,7 +5,13 @@ function App() {
   return (
     // BEM
     <div className="app">
-      <h2>Let's Build a Instagram Clone..</h2>
+      <div className="app__header">
+        <img
+          className="app_headerImage"
+          src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png"
+          alt="instagram logo"
+        />
+      </div>
     </div>
   );
 }
