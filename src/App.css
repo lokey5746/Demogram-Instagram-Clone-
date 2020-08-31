@@ -3,6 +3,16 @@
   height: 100vh;
 }
 
+.app__posts {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.app__postRight {
+  margin-left: 20px;
+}
+
 .app__header {
   object-fit: contain;
   background-color: white;
