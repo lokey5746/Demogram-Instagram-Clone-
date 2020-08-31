@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
+import Post from "./Post";
+import db from "./firebase";
 
 function App() {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    db.collection("posts").onSnapshot((snapshot) => {
+      setPosts(snapshot.docs.map((doc) => doc.data()));
+    });
+  }, []);
+
   return (
     // BEM
     <div className="app">
@@ -12,6 +22,13 @@ function App() {
           alt="instagram logo"
         />
       </div>
+      {posts.map((post) => (
+        <Post
+          username={post.username}
+          caption={post.caption}
+          imageUrl={post.imageUrl}
+        />
+      ))}
     </div>
   );
 }
