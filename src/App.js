@@ -173,7 +173,9 @@ function App() {
         <div className="app__postLeft">
           {posts.map(({ id, post }) => (
             <Post
+              postId={id}
               key={id}
+              user={user}
               username={post.username}
               caption={post.caption}
               imageUrl={post.imageUrl}
